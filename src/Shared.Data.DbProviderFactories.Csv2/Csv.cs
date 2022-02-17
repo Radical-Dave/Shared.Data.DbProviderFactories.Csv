@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Extensions.Configuration;
 using System.Data;
-using System.IO;
-using System.Linq;
+using System.Data.Common;
+using ConfigurationManager = System.Configuration.ConfigurationManager;
 
 namespace Shared.Data.DbProviderFactories
 {
     public static class Csv
     {
-        public static DataTable CreateDataTable(string source = "", string connectionString = null, string providerName = null)
+        public static DataTable CreateDataTable(string? source = "", string? connectionString = null, string? providerName = null)
         {
             var dataTable = new DataTable();
             //_items = new ObservableCollection<Dictionary<string, object>>();

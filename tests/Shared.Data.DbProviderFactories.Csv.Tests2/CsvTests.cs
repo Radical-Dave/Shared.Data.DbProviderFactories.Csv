@@ -1,5 +1,7 @@
+using Microsoft.Extensions.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.Data.DbProviderFactories;
+using System.IO;
 
 namespace Shared.Data.DbProviderFactoryCreateDataTable.Tests
 {
@@ -9,11 +11,11 @@ namespace Shared.Data.DbProviderFactoryCreateDataTable.Tests
         public CsvTests()
         {
             //var config = new ConfigurationBuilder().AddJsonFile("appconfig.json").Build();
-            //var builder = new ConfigurationBuilder()
-            //  .SetBasePath(Directory.GetCurrentDirectory())
-            //  .AddJsonFile("appSettings.json", optional: true, reloadOnChange: true)
-            //  .AddXmlFile("App.config", optional: true, reloadOnChange: true)
-            //  .AddEnvironmentVariables();
+            var builder = new ConfigurationBuilder()
+              .SetBasePath(Directory.GetCurrentDirectory())
+              .AddJsonFile("appSettings.json", optional: true, reloadOnChange: true)
+              .AddXmlFile("App.config", optional: true, reloadOnChange: true)
+              .AddEnvironmentVariables();
         }
 
         [TestMethod]
